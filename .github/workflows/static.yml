@@ -1,0 +1,309 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KGN Automation - Used CNC Machines</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Basic animation for fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        /* Modal specific styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            max-width: 90%;
+            transform: scale(0.95);
+            transition: transform 0.2s ease-out;
+        }
+        .modal-content.show {
+            transform: scale(1);
+        }
+        .modal-close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white shadow-lg py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-tight mb-4 md:mb-0">KGN Automation</a>
+            <p class="text-lg md:text-xl">Empowering Industry Through Innovation</p>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="bg-blue-800 text-white py-3 shadow-md">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center space-x-6 text-lg">
+                <li><a href="#home" class="hover:text-blue-200 transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#products" class="hover:text-blue-200 transition duration-300 ease-in-out">Products</a></li>
+                <li><a href="#about" class="hover:text-blue-200 transition duration-300 ease-in-out">About</a></li>
+                <li><a href="#contact" class="hover:text-blue-200 transition duration-300 ease-in-out">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero/Intro Section -->
+        <section id="home" class="relative bg-cover bg-center h-96 flex items-center justify-center text-white rounded-xl shadow-lg mb-12"
+            style="background-image: url('https://placehold.co/1920x1080/4A90E2/FFFFFF?text=CNC+Machines');">
+            <div class="absolute inset-0 bg-black opacity-60 rounded-xl"></div>
+            <div class="text-center z-10">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                    Your Trusted Partner for Used CNC Machines
+                </h1>
+                <p class="text-lg md:text-xl mb-6 max-w-xl mx-auto animate-fade-in-up">
+                    High-quality, reliable, and affordable CNC solutions for your manufacturing needs.
+                </p>
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg
+                                            transition duration-300 ease-in-out transform hover:scale-105 animate-bounce-once">
+                    Explore Our Machines
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="intro py-12 bg-white rounded-xl shadow-lg mb-12 p-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-blue-800">About Us</h2>
+            <p class="text-lg leading-relaxed text-gray-700 text-center max-w-3xl mx-auto">
+                KGN Automation is a leader in precision engineering and industrial automation solutions across India.
+                Our commitment to excellence ensures that every machine we offer undergoes rigorous
+                inspection and testing to guarantee optimal performance and reliability. We believe
+                in building lasting relationships with our clients by providing exceptional value,
+                unparalleled customer service, and expert technical support.
+            </p>
+        </section>
+
+        <!-- Product Categories Section -->
+        <section id="products" class="products py-12 bg-gray-100 rounded-xl shadow-lg mb-12 p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Product Categories</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Hydraulic Surface Grinding Machines</h3>
+                    <img src="https://placehold.co/300x200/FF5733/FFFFFF?text=Grinder" alt="Grinding Machine" class="mx-auto my-4 rounded-md">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Milling Machines</h3>
+                    <img src="https://placehold.co/300x200/33FF57/FFFFFF?text=Milling" alt="Milling Machine" class="mx-auto my-4 rounded-md">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Lathe Machines</h3>
+                    <img src="https://placehold.co/300x200/3357FF/FFFFFF?text=Lathe" alt="Lathe Machine" class="mx-auto my-4 rounded-md">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">CNC Machines</h3>
+                    <img src="https://placehold.co/300x200/FFC300/FFFFFF?text=CNC" alt="CNC Machine" class="mx-auto my-4 rounded-md">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Automation Systems</h3>
+                    <img src="https://placehold.co/300x200/DAF7A6/FFFFFF?text=Automation" alt="Automation System" class="mx-auto my-4 rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why py-12 bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Why Choose Us?</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center text-lg text-gray-700">
+                <li class="bg-gray-50 rounded-lg p-4 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-md">
+                    <span class="font-semibold text-blue-600 block mb-2">Advanced Engineering</span>
+                    <p class="text-sm">Leveraging cutting-edge techniques for superior performance.</p>
+                </li>
+                <li class="bg-gray-50 rounded-lg p-4 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-md">
+                    <span class="font-semibold text-blue-600 block mb-2">Custom Solutions</span>
+                    <p class="text-sm">Tailored machinery to meet your specific industrial needs.</p>
+                </li>
+                <li class="bg-gray-50 rounded-lg p-4 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-md">
+                    <span class="font-semibold text-blue-600 block mb-2">Expert Support</span>
+                    <p class="text-sm">Dedicated team ready to assist you at every step.</p>
+                </li>
+                <li class="bg-gray-50 rounded-lg p-4 shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-md">
+                    <span class="font-semibold text-blue-600 block mb-2">Nationwide Delivery</span>
+                    <p class="text-sm">Reliable and timely delivery across all of India.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-800">Contact Us</h2>
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2 bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-700">Send Your Query</h3>
+                    <!-- Mailto form for sending queries -->
+                    <form action="mailto:kgnautomation@gmail.com" method="post" enctype="text/plain">
+                        <div class="mb-6">
+                            <label for="query-name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                            <input type="text" id="query-name" name="Name" placeholder="Your Name"
+                                   class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="query-email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="query-email" name="Email" placeholder="Your Email"
+                                   class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="query-subject" class="block text-gray-700 text-sm font-bold mb-2">Subject:</label>
+                            <input type="text" id="query-subject" name="Subject" placeholder="Subject of your query"
+                                   class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="query-message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                            <textarea id="query-message" name="Message" rows="6" placeholder="Your Message"
+                                      class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full
+                                                       transition duration-300 ease-in-out shadow-lg transform hover:scale-105">
+                            Send Query
+                        </button>
+                        <p class="text-sm text-gray-600 mt-4">
+                            * Clicking "Send Query" will open your default email client to send the message.
+                        </p>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-700">Our Details</h3>
+                    <p class="text-gray-700 mb-4">
+                        <span class="font-semibold">Address:</span> Plot No. 421, Near GR International School Gate No. 5, Pooth Khurd, Bawana, New Delhi-110039
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        <span class="font-semibold">Email:</span> kgnautomation@gmail.com
+                    </p>
+                    <p class="text-700 mb-4 flex items-center">
+                        <span class="font-semibold mr-2">Phone:</span> 9891348802
+                        <button id="showPhoneButton" class="ml-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-bold py-1 px-3 rounded-full
+                                                               transition duration-300 ease-in-out shadow-md">
+                            Show Number
+                        </button>
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        <span class="font-semibold">Business Hours:</span> Mon - Sat: 9:00 AM - 6:00 PM
+                    </p>
+                    <!-- Google Map Embed -->
+                    <div class="mt-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34947.6749968434!2d77.01017596541537!3d28.82520623351659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0b171c69950d%3A0x869b00e353842c30!2sBawana%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded-lg shadow-md"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2025 KGN Automation. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-blue-300 transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-300 transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Phone Number Modal -->
+    <div id="phoneModal" class="modal-overlay hidden">
+        <div class="modal-content animate-fade-in rounded-xl">
+            <button class="modal-close-button" onclick="hidePhoneModal()">×</button>
+            <h3 class="text-2xl font-bold text-blue-800 mb-4">Contact Number</h3>
+            <p class="text-4xl font-extrabold text-green-600">9891348802</p>
+            <p class="text-gray-600 mt-4">Feel free to call us during business hours!</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the phone number modal
+        const phoneModal = document.getElementById('phoneModal');
+        const showPhoneButton = document.getElementById('showPhoneButton');
+
+        function showPhoneModal() {
+            phoneModal.classList.remove('hidden');
+            // Add 'show' class for the transform animation
+            setTimeout(() => {
+                phoneModal.querySelector('.modal-content').classList.add('show');
+            }, 10); // Small delay to ensure hidden is removed before transform
+        }
+
+        function hidePhoneModal() {
+            phoneModal.querySelector('.modal-content').classList.remove('show');
+            // Hide after animation
+            setTimeout(() => {
+                phoneModal.classList.add('hidden');
+            }, 200); // Match CSS transition duration
+        }
+
+        // Event listener for the "Show Number" button
+        if (showPhoneButton) {
+            showPhoneButton.addEventListener('click', showPhoneModal);
+        }
+
+        // Close modal when clicking outside of it
+        if (phoneModal) {
+            phoneModal.addEventListener('click', (event) => {
+                if (event.target === phoneModal) {
+                    hidePhoneModal();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
